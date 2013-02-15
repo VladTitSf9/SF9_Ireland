@@ -1,6 +1,7 @@
 {
 	"name" : "sf9/ireland",
-	"description":"",
+	"license" : "OSL-3.0",
+	"description":"A module that adds Irish counties into Magento.",
 	"time":"2013-02-15",
 	"version": "2.0.2",
 	"require": {},
@@ -13,9 +14,16 @@
 			"role": "Developer"
 		}
 	],
-	"suppport": {
-		"email": "",
-		"issues": "",
-		"wiki": ""
+	"extra": {
+		"map": [
+	    			[
+	    			"app/etc/modules/SF9_Ireland.xml",
+	                "app/etc/modules/SF9_Ireland.xml"
+	            	],
+	            	[
+                	"app/code/community/SF9/Ireland",
+	                "app/code/community/SF9/Ireland"
+	            	]
+                ]
 	}
 }
