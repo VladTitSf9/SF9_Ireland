@@ -4,8 +4,6 @@
 	"description":"A module that adds Irish counties into Magento.",
 	"time":"2013-02-15",
 	"version": "2.0.2",
-	"require": {},
-	"autoload": {},
 	"authors": [
 		{
 			"name": "Alan Morkan",
@@ -14,6 +12,10 @@
 			"role": "Developer"
 		}
 	],
+	"require": {
+				"magento-hackathon/magento-composer-installer": "*"
+	           },
+    "type": "magento-module",
 	"extra": {
 		"map": [
 	    			[
