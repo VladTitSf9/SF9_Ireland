@@ -1,0 +1,148 @@
+<config>
+    <modules>
+        <SF9_Ireland>
+            <version>2.0.2</version>
+        </SF9_Ireland>
+    </modules>
+
+    <global>
+
+        <models>
+            <anpost>
+                <class>SF9_Ireland_Model</class>
+            </anpost>
+            <anpost_adminhtml>
+                <class>SF9_Ireland_Adminhtml_Model</class>
+            </anpost_adminhtml>
+            <anpost_shipping>
+                <class>SF9_Ireland_Model</class>
+                <resourceModel>anpost_mysql4</resourceModel>
+            </anpost_shipping>
+            <anpost_mysql4>
+                <class>SF9_Ireland_Model_Mysql4</class>
+                <entities>
+                    <anpost>
+                        <table>shipping_anpost</table>
+                    </anpost>
+                </entities>
+            </anpost_mysql4>
+        </models>
+
+        <resources>
+            <ireland_setup>
+                <setup>
+                    <module>SF9_Ireland</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+                <anpost_write>
+                    <connection>
+                        <use>core_write</use>
+                    </connection>
+                </anpost_write>
+                <anpost_read>
+                    <connection>
+                        <use>core_read</use>
+                    </connection>
+                </anpost_read>
+            </ireland_setup>
+        </resources>
+
+        <sales>
+            <shipping>
+                <carriers>
+                    <anpost>
+                        <class>SF9_Ireland_Model_Carrier_Anpost</class>
+                    </anpost>
+                </carriers>
+            </shipping>
+        </sales>
+
+        <helpers>
+            <anpost>
+                <class>SF9_Ireland_Helper</class>
+            </anpost>
+        </helpers>
+
+        <events>
+            <customer_address_format>
+                <observers>
+                    <sf9_ireland_observer>
+                        <type>singleton</type>
+                        <class>SF9_Ireland_Model_Observer</class>
+                        <method>update_address_format</method>
+                    </sf9_ireland_observer>
+                </observers>
+            </customer_address_format>
+        </events>
+
+    </global>
+
+    <frontend>
+        <translate>
+            <modules>
+                <SF9_Ireland>
+                    <files>
+                        <default>SF9_Ireland.csv</default>
+                    </files>
+                </SF9_Ireland>
+            </modules>
+        </translate>
+    </frontend>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <SF9_Ireland>
+                    <files>
+                        <default>SF9_Ireland.csv</default>
+                    </files>
+                </SF9_Ireland>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+        <carriers>
+            <anpost>
+                <condition_name>package_weight</condition_name>
+                <active>0</active>
+                <remove_virtual>0</remove_virtual>
+                <sallowspecific>0</sallowspecific>
+                <allow_free_shipping_promotions>1</allow_free_shipping_promotions>
+                <show_only_free>0</show_only_free>
+                <free_method_text>Free Shipping</free_method_text>
+                <cutoff_cost>50</cutoff_cost>
+                <model>anpost_shipping/carrier_anpost</model>
+                <name>An Post</name>
+                <title>Select Shipping Method</title>
+                <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this
+                    shipping method, please contact us.
+                </specificerrmsg>
+            </anpost>
+        </carriers>
+
+        <ireland>
+            <address>
+                <test>100</test>
+                <format>
+                    <![CDATA[
+                    {{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}<br/>
+                    {{depend company}}{{var company}}<br />{{/depend}}
+{{if street1}}{{var street1}}<br />{{/if}}
+{{depend street2}}{{var street2}}<br />{{/depend}}
+{{depend street3}}{{var street3}}<br />{{/depend}}
+{{depend street4}}{{var street4}}<br />{{/depend}}
+{{if city}}{{var city}}, <br />{{/if}}{{if region}}{{var region}}, {{/if}}<br/>
+{{var country}}<br/>
+{{depend telephone}}T: {{var telephone}}{{/depend}}
+{{depend fax}}<br/>F: {{var fax}}{{/depend}}
+{{depend email}}<br/>E: {{var email}}{{/depend}}
+                    ]]>
+                </format>
+            </address>
+        </ireland>
+
+    </default>
+</config>

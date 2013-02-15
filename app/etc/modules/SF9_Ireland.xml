@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SF9_Ireland>
+            <active>true</active>
+            <codePool>community</codePool>
+        </SF9_Ireland>
+    </modules>
+</config> 

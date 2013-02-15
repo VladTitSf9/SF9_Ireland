@@ -1,0 +1,21 @@
+{
+	"name" : "sf9/ireland",
+	"description":"",
+	"time":"2013-02-15",
+	"version": "2.0.2",
+	"require": {},
+	"autoload": {},
+	"authors": [
+		{
+			"name": "Alan Morkan",
+			"email": "alan@sf9.ie",
+			"homepage": "http://www.studioforty9.com/",
+			"role": "Developer"
+		}
+	],
+	"suppport": {
+		"email": "",
+		"issues": "",
+		"wiki": ""
+	}
+}
