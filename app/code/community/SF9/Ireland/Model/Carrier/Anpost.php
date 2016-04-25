@@ -156,11 +156,6 @@ class SF9_Ireland_Model_Carrier_Anpost
         return array('anpost'=>$this->getConfigData('name'));
     }
     
-    public function getAllowedMethods()
-        {
-            return array('dpd' => $this->getConfigData('name'));
-        }
-
     public function isTrackingAvailable()
     {
         return true;
