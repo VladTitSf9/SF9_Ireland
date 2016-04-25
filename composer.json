@@ -15,17 +15,5 @@
 	"require": {
 				"magento-hackathon/magento-composer-installer": "*"
 	           },
-    "type": "magento-module",
-	"extra": {
-		"map": [
-	    			[
-	    			"app/etc/modules/SF9_Ireland.xml",
-	                "app/etc/modules/SF9_Ireland.xml"
-	            	],
-	            	[
-                	"app/code/community/SF9/Ireland",
-	                "app/code/community/SF9/Ireland"
-	            	]
-                ]
-	}
+  "type": "magento-module"
 }
