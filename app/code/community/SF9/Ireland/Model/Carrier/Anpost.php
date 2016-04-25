@@ -155,5 +155,23 @@ class SF9_Ireland_Model_Carrier_Anpost
     {
         return array('anpost'=>$this->getConfigData('name'));
     }
+    
+    public function getAllowedMethods()
+        {
+            return array('dpd' => $this->getConfigData('name'));
+        }
 
+    public function isTrackingAvailable()
+    {
+        return true;
+    }
+
+    public function getTrackingInfo($tracking)
+    {
+        $track = Mage::getModel('shipping/tracking_result_status');
+        $track->setUrl(Mage::helper('anpost')->getCustomerTrackingUrl($tracking))
+            ->setTracking($tracking)
+            ->setCarrierTitle($this->getConfigData('name'));
+        return $track;
+    }
 }
