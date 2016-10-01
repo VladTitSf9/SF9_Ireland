@@ -3,7 +3,6 @@
 	"license" : "OSL-3.0",
 	"description":"A module that adds Irish counties into Magento.",
 	"time":"2013-02-15",
-	"version": "2.0.2",
 	"authors": [
 		{
 			"name": "Alan Morkan",
