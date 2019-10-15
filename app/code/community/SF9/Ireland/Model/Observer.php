@@ -22,7 +22,7 @@
 			$storeid = Mage::app()->getStore()->getId();
 
 			if(strpos(Mage::helper('core/url')->getCurrentUrl(), 'checkout/onepage') === FALSE){
-				$format = Mage::getConfig()->getNode('default/ireland/address/format');
+				$format = (string)Mage::getConfig()->getNode('default/ireland/address/format');
 				$type->setDefaultFormat($format);
 			}
 		}
